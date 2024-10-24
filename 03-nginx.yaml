@@ -1,7 +1,7 @@
-- name: nginx install and run
-  host: web
-  Task:
+- name: "nginx install and run"
+  hosts: web
+  tasks:
     - name: install nginx
-      ansible.builtin.pacakage: #heterogenous module that can work for all distros
+      ansible.builtin.package:    #heterogenous module that can work for all distros
         name: nginx
         state: installed
