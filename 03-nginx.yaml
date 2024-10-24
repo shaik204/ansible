@@ -5,11 +5,11 @@
     - name: install nginx    #first task
       ansible.builtin.package:    #heterogenous module that can work for all distros
         name: nginx
-        state: installed
+        state: present
 
 
-    - name: start nginx    #this is second task
+    - name: run nginx    #this is second task
       ansible.builtin.service:
-      name: nginx
-      state: started     
-      enabled: yes
+        name: nginx
+        state: started     
+        enabled: yes
