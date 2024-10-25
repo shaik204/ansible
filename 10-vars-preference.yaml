@@ -1,24 +1,23 @@
 - name: Variable to print
   hosts: web
+  
+  # Place vars_prompt here, not under vars
+  vars_prompt:  
+    - name: COURSE
+      prompt: "Please enter the course name"
+      private: false  # not confidential
+
   vars: 
     COURSE: "DevOps with AWS from PLAY LEVEL"
     DURATION: "120HRS"
     TRAINER: "Shiva kumar Reddy M"
-    vars_prompt:  #giving reference to the vars files
-     - name: COURSE
-       prompt: please enter the course name
-       private: false #not confidential
-     - name: TRAINER
-       prompt: Please enter the trainer's name
-       private: false #not confidential
-     - name: DURATION
-       prompt: Please enter the duration  #this is like a list, you can do any number of prompts
-       private: false #not confidential  
+    
   tasks:
-      - name: print the information
-        vars:
-             COURSE: "DevOps with AWS from TASK LEVEL"
-             DURATION: "120HRS"
-             TRAINER: "Shiva kumar Reddy M"
-        ansible.builtin.debug:
-              msg: "Hi I am learning {{COURSE}} , DURATION IS {{DURATION}} , TRAINER IS {{TRAINER}}"
+    - name: print the information
+      vars:
+        COURSE: "DevOps with AWS from TASK LEVEL"
+        DURATION: "120HRS"
+        TRAINER: "Shiva kumar Reddy M"
+      ansible.builtin.debug:
+        msg: "Hi I am learning {{COURSE}}"
+ 
