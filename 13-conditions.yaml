@@ -14,3 +14,6 @@
     - name: create user
       ansible.builtin.command: useradd expense
       when: USER.rc != 0
+
+
+      #this script teaches us error handling with conditions
