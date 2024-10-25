@@ -1,5 +1,11 @@
 - name: Variable to print
   hosts: web
+  vars: 
+    COURSE: "DevOps with AWS from PLAY LEVEL"
+    DURATION: "120HRS"
+    TRAINER: "Shiva kumar Reddy M"
+  vars_files:
+  - vars.yaml
   
   # Place vars_prompt here, not under vars
   vars_prompt:  
@@ -7,18 +13,14 @@
       prompt: "Please enter the course name"
       private: false  # not confidential
 
-  vars: 
-    COURSE: "DevOps with AWS from PLAY LEVEL"
-    DURATION: "120HRS"
-    TRAINER: "Shiva kumar Reddy M"
     
   tasks:
-    - name: print the information
-      vars:
+  - name: print the information
+    vars:
         #COURSE: "DevOps with AWS from TASK LEVEL"
         DURATION: "120HRS"
         TRAINER: "Shiva kumar Reddy M"
-      ansible.builtin.debug:
+    ansible.builtin.debug:
         msg: "Hi I am learning {{COURSE}}"
  
 
