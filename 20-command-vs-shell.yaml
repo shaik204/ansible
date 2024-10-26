@@ -10,8 +10,10 @@
 - name: check the process
   hosts: local
   connection: local
-  ansible.builtin.shell: ps -ef | grep ssh
-  register: output  #its like telling the command to go check what all are there running from ps -ef
+  tasks:
+      - name: check processes using shell
+        ansible.builtin.shell: ps -ef | grep ssh
+        register: output  #its like telling the command to go check what all are there running from ps -ef
   # and from there we are asking to get only ssh and put it in output
 
 
