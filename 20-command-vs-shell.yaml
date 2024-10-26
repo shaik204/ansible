@@ -11,19 +11,13 @@
   hosts: local
   connection: local
   tasks:
-      - name: check processes using shell
-        ansible.builtin.shell: ps -ef | grep ssh
-        register: output  #its like telling the command to go check what all are there running from ps -ef
+    - name: check processes using shell
+      ansible.builtin.shell: ps -ef | grep ssh
+      register: output  #its like telling the command to go check what all are there running from ps -ef
   # and from there we are asking to get only ssh and put it in output
 
 
-- name: check the process using command
-  ansible.builtin.command: ps -ef | grep ssh
-  register: output
+    - name: check the process using command
+      ansible.builtin.command: ps -ef | grep ssh
+      register: output
 
-# #chat gpt
-# 
-
-#     - name: check the process using command
-#       ansible.builtin.command: ps -ef | grep ssh
-#       register: output_command
