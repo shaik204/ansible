@@ -17,7 +17,7 @@
   # and from there we are asking to get only ssh and put it in output
 
 
-- name: check the process suing command
+- name: check the process using command
   ansible.builtin.command: ps -ef | grep ssh
   register: output
 
