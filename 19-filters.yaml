@@ -52,7 +52,9 @@
            msg: "{{ course | items2dict }}"   
 
 
-     - name: check ip address
+     - name: check ip address  #this will not run and will say failed to import python
+          # then give the command" sudo pip3 install netaddr
+ 
        vars: 
           myip: "3.89.197.183"             
        ansible.builtin.debug:
