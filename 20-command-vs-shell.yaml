@@ -17,18 +17,12 @@
   # and from there we are asking to get only ssh and put it in output
 
 
-- name: check the process
+- name: check the process suing command
   ansible.builtin.command: ps -ef | grep ssh
   register: output
 
 # #chat gpt
-# - name: check processes 
-#   hosts: local  # Specify the hosts again for this play
-#   connection: local
-#   tasks:
-#     - name: check the process using shell
-#       ansible.builtin.shell: ps -ef | grep ssh
-#       register: output
+# 
 
 #     - name: check the process using command
 #       ansible.builtin.command: ps -ef | grep ssh
