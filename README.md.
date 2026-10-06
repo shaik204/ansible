@@ -1,0 +1,25 @@
+# ansible
+
+Ansible playbooks I wrote while learning configuration management. They start with a simple ping and build up to variables, conditions, facts, filters and installing nginx.
+
+## What's covered
+- **Basics:** ping and multi-play playbooks (`01`, `02`)
+- **Web server:** installing and configuring nginx (`03`, `15`)
+- **Variables:** playbook vars, prompts, vars files, inventory vars, command-line args and variable precedence (`04` to `10`)
+- **Data types:** strings, lists and dictionaries (`11`)
+- **Conditions:** `when` statements (`12`, `13`)
+- **Facts:** gathering and using system facts (`14`)
+- **Filters:** transforming data with Jinja2 filters (`19`)
+- **Commands:** `command` vs `shell` modules (`20`)
+- **Supporting files:** `vars.yaml` (variables used by the playbooks) and `facts.json` (sample output from fact gathering)
+
+## Inventory
+`inventory.ini` has placeholder IP addresses and groups (`web`, `backend`, `mysql`). Replace them with your own hosts and set up SSH key access before running.
+
+## How to run
+    ansible-playbook -i inventory.ini 01-ping.yaml
+
+For playbooks that need a password or prompt, add `--ask-pass`.
+
+## Tools
+Ansible, YAML, Jinja2, nginx
